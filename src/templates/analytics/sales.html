@@ -8,4 +8,43 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col">
+        <p>Recientes</p>
+        <ol>
+            {% for order in recent_orders %}
+            <li>
+                {{ order.order_id }}
+                {{ order.total }}
+                {{ order.updated }}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div class="col">
+        <p>Enviadas</p>
+        <ol>
+            {% for order in shipped_orders %}
+            <li>
+                {{ order.order_id }}
+                {{ order.total }}
+                {{ order.updated }}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+    <div class="col">
+        <p>Pagadas</p>
+        <ol>
+            {% for order in paid_orders %}
+            <li>
+                {{ order.order_id }}
+                {{ order.total }}
+                {{ order.updated }}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+
 {% endblock %}

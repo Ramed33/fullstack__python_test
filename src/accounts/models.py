@@ -1,9 +1,9 @@
 from django.db import models
 from datetime import timedelta
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db.models import Q
-from django.db.model.signals import pre_save, post_save
+from django.db.models.signals import pre_save, post_save
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager
@@ -24,7 +24,7 @@ class UserManager(BaseUserManager):
             raise ValueError("Los usuarios deben tener una contraseña")
         user_obj = self.model(
             email = self.normalize_email(email),
-            ful_name = full_name
+            full_name = full_name
         )        
         user_obj.set_password(password)
         user_obj.staff = is_staff
@@ -60,7 +60,7 @@ class User(AbstractBaseUser):
     admin = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    USER_NAME_FIELD = "email"
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
     objects = UserManager()
