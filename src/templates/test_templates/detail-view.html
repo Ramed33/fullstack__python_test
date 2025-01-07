@@ -1,0 +1,5 @@
+{% extends "test_templates/base.html" %}
+
+{% block content %}
+    {% include "test_templates/object-detail.html" with object_title="Producto X" price=299.99 created_at=today %}
+{% endblock content %}

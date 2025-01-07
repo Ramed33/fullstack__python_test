@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        {% block title %}
+        Mi Título en base.html
+        {% endblock title %}
+    </title>
+
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<html>
+    <body>
+        {% include "test_templates/messages.html" %}
+
+        {% block content %}
+        Contenido de base.html
+        {% endblock content %}
+    </body>
+</html>

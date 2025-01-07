@@ -1,0 +1,8 @@
+<form method="POST" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+    {% if delete_url %}
+        <a href="{{ delete_url }}">Eliminar</a>
+    {% endif %}
+</form>

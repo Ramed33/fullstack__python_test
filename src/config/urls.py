@@ -9,4 +9,7 @@ urlpatterns = [
     path("ventas/", include("ventas.urls")),
     path("admin/", admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("forms/", include("forms_test.urls")),
+    path("test_templates/", include("test_templates.urls")),
+    path("api/v1", include("api.urls")),    
 ]
