@@ -12,4 +12,5 @@ urlpatterns = [
     path("forms/", include("forms_test.urls")),
     path("test_templates/", include("test_templates.urls")),
     path("api/v1", include("api.urls")),    
+    path("api/v2", include("rest_examples.urls")),
 ]
